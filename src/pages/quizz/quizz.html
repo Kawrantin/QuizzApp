@@ -1,0 +1,40 @@
+<!--
+  Generated template for the QuizzPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>quizzPage</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <div *ngIf="endingMessage === null">
+    <ion-card *ngFor="let current of currentQuestion">
+      <ion-card-header text-wrap>   {{index+1}} ) {{current.question }} </ion-card-header>
+      <button ion-item (click)="giveAnswer(current.correct_answer)"> {{current.correct_answer }}</button>
+      <div *ngFor="let answer of current.incorrect_answers">
+        <button ion-item (click)="giveAnswer(current.incorrect_answer)"> {{ answer }}</button>
+      </div>
+    </ion-card>
+    <p>{{ tip }}</p>
+    <button ion-button full (click)="getNextQuestion()">Suivante</button>
+
+  </div>
+
+  <div *ngIf="endingMessage !== null">
+    <p>{{endingMessage}}</p>
+    <button ion-button full (click)="backToMainPage()">Rejouer</button>
+
+  </div>
+
+
+
+</ion-content>

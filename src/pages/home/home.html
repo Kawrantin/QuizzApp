@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Question pour pas un rond.
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -9,7 +9,7 @@
 <ion-content padding>
   <ion-item>
     <ion-label floating>Nombre de question </ion-label>
-    <ion-select [(ngModel)]="number">
+    <ion-select [(ngModel)]="amount">
       <ion-option value="5">5</ion-option>
       <ion-option value="6">6</ion-option>
       <ion-option value="7">7</ion-option>
@@ -28,5 +28,7 @@
     </ion-select>
   </ion-item>
 
+  <button ion-button full icon-left (click)="getQuestions()"><ion-icon name="search"></ion-icon>C'est parti !</button>
+<p>{{errorMessage}}</p>
 
 </ion-content>
